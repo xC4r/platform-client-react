@@ -2,7 +2,7 @@
 /node_modules
 
 # Build output
-/client/build
+/build
 
 # Entornos React
 /src/environment.js
