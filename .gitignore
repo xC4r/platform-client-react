@@ -1,0 +1,30 @@
+# Node Modules
+/node_modules
+
+# Build output
+/client/build
+
+# Entornos React
+/src/environment.js
+# /src/environment.dev.js
+
+# Directorios logs y cache
+/logs
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+
+# Configuracion sistema
+.DS_Store
+Thumbs.db
+
+# Temporales
+/.idea
+/.vscode
+/.env
+
+# Archivos Docker
+docker-compose.override.yml
+
+
+

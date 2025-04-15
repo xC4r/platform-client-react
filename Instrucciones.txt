@@ -1,0 +1,8 @@
+Instrucciones Dev
+=====================
+
+1. Configura el entorno del sistema:
+	- NodeJS
+	- Base datos Mysql
+
+2. Configura las variable entorno en "src/enviroment.js"
