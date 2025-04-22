@@ -6,7 +6,7 @@ const getAuthToken = () => localStorage.getItem('authToken');
 
 // Funciones excluidas del centralizado API Service
 const getUsuarios = async () => {
-  const response = await fetch(`${PATH_URL}/api/v1/usuarios`, {
+  const response = await fetch(`${PATH_URL}/api/v1/configuracion/usuarios`, {
     headers: {
       'Authorization': `Bearer ${getAuthToken()}`
     }
@@ -17,7 +17,7 @@ const getUsuarios = async () => {
 const getMenu = async () => {
   const token = getToken();
   if (!token) return false;
-  const response = await fetch(`${PATH_URL}/api/v1/usuarios/menu`, {
+  const response = await fetch(`${PATH_URL}/api/v1/configuracion/usuarios/menu`, {
     headers: {
       'Authorization': `Bearer ${token}`,
     }
@@ -26,9 +26,9 @@ const getMenu = async () => {
 };
 
 // Funciones centralizadas en API Service
-const getUsuario = async (numDocumento) => request(`/api/v1/usuarios/${numDocumento}`);
-const addUsuario = async (usuario) => request('/api/v1/usuarios', 'POST', usuario);
-const updateUsuario = async (numDocumento, updates) => request(`/api/v1/usuarios/${numDocumento}`, 'PUT', updates);
-const deleteUsuario = async (numDocumento) => request(`/api/v1/usuarios/${numDocumento}`, 'DELETE');
+const getUsuario = async (numDocumento) => request(`/api/v1/configuracion/usuarios/${numDocumento}`);
+const addUsuario = async (usuario) => request('/api/v1/configuracion/usuarios', 'POST', usuario);
+const updateUsuario = async (numDocumento, updates) => request(`/api/v1/configuracion/usuarios/${numDocumento}`, 'PUT', updates);
+const deleteUsuario = async (numDocumento) => request(`/api/v1/configuracion/usuarios/${numDocumento}`, 'DELETE');
 
 export { getUsuarios, getUsuario, addUsuario, updateUsuario, deleteUsuario, getMenu };

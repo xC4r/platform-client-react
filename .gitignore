@@ -6,7 +6,6 @@
 
 # Entornos React
 /src/environment.js
-# /src/environment.dev.js
 
 # Directorios logs y cache
 /logs
@@ -21,10 +20,7 @@ Thumbs.db
 # Temporales
 /.idea
 /.vscode
-/.env
 
-# Archivos Docker
-docker-compose.override.yml
 
 
 

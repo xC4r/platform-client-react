@@ -20,7 +20,15 @@ const logout = () => request('/api/v1/seguridad/logout', 'POST').then(response =
 const register = (username, password) => request('/api/v1/seguridad/register', 'POST', { username, password });
 const forgotPassword = (email) => request('/api/v1/seguridad/forgot-password', 'POST', { email });
 const resetPassword = (code, newPassword) => request('/api/v1/seguridad/reset-password', 'POST', { code, newPassword });
-const validateToken = () => request('/api/v1/seguridad/verificar-token', 'POST', {}).then(response => response);
+const validateToken = async () => {
+  try {
+    const response = await request('/api/v1/seguridad/verificar-token', 'POST', {});
+    return response && response.valid === true; //
+  } catch (error) {
+    console.error('Error al validar token:', error);
+    return false;
+  }
+};
 
 // Exportación de métodos
 export { login, logout, register, forgotPassword, resetPassword, validateToken };
